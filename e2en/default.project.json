@@ -1,0 +1,7 @@
+{
+  "name": "e2en",
+  "tree": {
+    "$className": "ModuleScript",
+    "$path": "src"
+  }
+}

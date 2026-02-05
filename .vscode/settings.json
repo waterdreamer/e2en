@@ -1,0 +1,39 @@
+{
+	"luau-lsp.sourcemap.enabled": true,
+	"luau-lsp.sourcemap.autogenerate": true,
+	"luau-lsp.sourcemap.rojoProjectFile": "default.project.json",
+
+	"luau-lsp.platform.type": "roblox",
+
+	"luau-lsp.diagnostics.strictDatamodelTypes": false,
+	"luau-lsp.diagnostics.includeDependents": false,
+
+	"luau-lsp.fflags.enableNewSolver": false,
+
+	"luau-lsp.completion.imports.enabled": true,
+	"luau-lsp.completion.imports.suggestServices": true,
+	"luau-lsp.completion.imports.suggestRequires": true,
+
+	"luau-lsp.hover.strictDatamodelTypes": true,
+
+	"luau-lsp.inlayHints.parameterNames": "literals",
+	"luau-lsp.inlayHints.variableTypes": false,
+	"luau-lsp.inlayHints.functionReturnTypes": false,
+	"luau-lsp.inlayHints.parameterTypes": false,
+
+	"luau-lsp.ignoreGlobs": [
+		"**/_Index/**",
+		"**/Packages/**",
+		"**/node_modules/**"
+	],
+
+	"[luau]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": false,
+		"editor.formatOnSave": false
+	},
+
+	"files.associations": {
+		"*.luau": "luau"
+	}
+}

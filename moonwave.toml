@@ -1,0 +1,75 @@
+[git]
+gitRepoUrl = "https://github.com/estrogenie/e2en"
+
+[docusaurus]
+title = "e2en"
+tagline = "A system-based Roblox framework with automatic client replication"
+url = "https://estrogenie.github.io"
+baseUrl = "/e2en/"
+favicon = "/favicon.svg"
+organizationName = "estrogenie"
+projectName = "e2en"
+
+[docusaurus.themeConfig.navbar]
+title = "e2en"
+
+[[docusaurus.themeConfig.navbar.items]]
+type = "doc"
+docId = "intro"
+position = "left"
+label = "Docs"
+
+[[docusaurus.themeConfig.navbar.items]]
+href = "api"
+position = "left"
+label = "API"
+
+[[docusaurus.themeConfig.navbar.items]]
+href = "https://github.com/estrogenie/e2en"
+label = "GitHub"
+position = "right"
+
+[docusaurus.themeConfig.footer]
+style = "dark"
+copyright = "Copyright 2024"
+
+[home]
+enabled = true
+includeReadme = false
+
+[[home.features]]
+title = "System Architecture"
+description = "Services (server) and Controllers (client) grouped into self-contained systems."
+
+[[home.features]]
+title = "Automatic Networking"
+description = "Expose methods, signals, and properties in a Service's Client table. Clients access them automatically."
+
+[[home.features]]
+title = "Type Safety"
+description = "Strict Luau types throughout."
+
+[[home.features]]
+title = "Auto Replication"
+description = "Framework replicates to clients at runtime, stripping server-only code."
+
+[[home.features]]
+title = "Lifecycle Hooks"
+description = "Player and character lifecycle management with Trove integration for cleanup."
+
+[[home.features]]
+title = "Knit-Inspired"
+description = "Based on Knit's patterns with some structural changes."
+
+classOrder = [
+    "e2enServer",
+    "e2enClient",
+    "RemoteSignal",
+    "RemoteProperty",
+    "ClientRemoteSignal",
+    "ClientRemoteProperty",
+    "Component",
+    "Trove",
+    "Signal",
+    "Util"
+]

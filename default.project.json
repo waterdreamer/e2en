@@ -1,0 +1,14 @@
+{
+  "name": "e2en-game",
+  "tree": {
+    "$className": "DataModel",
+    "ServerScriptService": {
+      "e2en": {
+        "$path": "e2en/src"
+      },
+      "Loader": {
+        "$path": "src/server/Loader.server.luau"
+      }
+    }
+  }
+}
