@@ -87,18 +87,15 @@ local function ExposeServicesToClients()
 end
 
 local function ReplicateClientFramework()
-	-- Clone the entire e2en framework to ReplicatedStorage
 	local e2enRoot = script.Parent.Parent
 	local e2enClient = e2enRoot:Clone()
 	e2enClient.Name = "e2en"
 
-	-- Remove server-only modules
 	local serverModule = e2enClient:FindFirstChild("Core") and e2enClient.Core:FindFirstChild("Server")
 	if serverModule then
 		serverModule:Destroy()
 	end
 
-	-- Remove all Service.luau files from Systems (server-only code)
 	local systemsFolder = e2enClient:FindFirstChild("Systems")
 	if systemsFolder then
 		for _, descendant in systemsFolder:GetDescendants() do
