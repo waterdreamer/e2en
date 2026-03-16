@@ -2,6 +2,10 @@
 sidebar_position: 1
 ---
 
+:::warning
+This documentation process was primarily driven by AI (with full oversight from me) due to the process otherwise being extremely time consuming. There may be some errors.
+:::
+
 # Introduction
 
 e2en is an opinionated framework I use for my personal Roblox projects. It's heavily inspired by [Knit](https://sleitnick.github.io/Knit/) but structured the way I prefer to organize code.
