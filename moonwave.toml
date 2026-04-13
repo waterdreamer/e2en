@@ -1,13 +1,13 @@
 [git]
-gitRepoUrl = "https://github.com/estrogenie/e2en"
+gitRepoUrl = "https://github.com/waterdreamer/e2en"
 
 [docusaurus]
 title = "e2en"
 tagline = "A system-based Roblox framework with automatic client replication"
-url = "https://estrogenie.github.io"
+url = "https://waterdreamer.github.io"
 baseUrl = "/e2en/"
 
-organizationName = "estrogenie"
+organizationName = "waterdreamer"
 projectName = "e2en"
 
 [docusaurus.themeConfig.navbar]
@@ -25,7 +25,7 @@ position = "left"
 label = "API"
 
 [[docusaurus.themeConfig.navbar.items]]
-href = "https://github.com/estrogenie/e2en"
+href = "https://github.com/waterdreamer/e2en"
 label = "GitHub"
 position = "right"
 

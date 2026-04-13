@@ -2,7 +2,7 @@
 
 A Knit-inspired opinionated Roblox framework.
 
-**[Documentation](https://estrogenie.github.io/e2en/)**
+**[Documentation](https://waterdreamer.github.io/e2en/)**
 
 ## Features
 
