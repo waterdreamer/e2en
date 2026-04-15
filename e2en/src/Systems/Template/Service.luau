@@ -3,6 +3,10 @@ local Types = require(root.Types)
 
 local e2en: Types.e2enServer = require(root) :: any
 
+export type TemplateServiceType = {
+
+}
+
 local TemplateService = e2en.CreateService({
 	Name = "TemplateService",
 	Client = {},

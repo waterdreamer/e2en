@@ -4,6 +4,15 @@ local Types = require(root.Types)
 --we cast to Types.e2enServer for intellisense since the framework returns `any`
 local e2en: Types.e2enServer = require(root) :: any
 
+--export a type so other services can cast GetService() and get full autocomplete
+export type ExampleServiceType = {
+	GetCoins: (self: ExampleServiceType, player: Player) -> number,
+	SetCoins: (self: ExampleServiceType, player: Player, amount: number) -> (),
+	AddCoins: (self: ExampleServiceType, player: Player, amount: number) -> (),
+	RemoveCoins: (self: ExampleServiceType, player: Player, amount: number) -> boolean,
+	HasCoins: (self: ExampleServiceType, player: Player, amount: number) -> boolean,
+}
+
 --the Client table is what gets exposed to clients (remotes get created automatically)
 local ExampleService = e2en.CreateService({
 	Name = "ExampleService",

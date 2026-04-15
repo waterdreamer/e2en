@@ -13,6 +13,62 @@ type StatSyncData = SharedTypes.StatSyncData
 type Modifier = SharedTypes.Modifier
 type StatDefinition = SharedTypes.StatDefinition
 
+export type ModifiersServiceType = {
+	DefineStats: (self: ModifiersServiceType, definitions: { [string]: StatDefinition }) -> (),
+
+	SetPlayerBase: (self: ModifiersServiceType, player: Player, statPath: string, baseValue: number) -> (),
+	SetPlayerClamps: (self: ModifiersServiceType, player: Player, statPath: string, minValue: number?, maxValue: number?) -> (),
+	SetPlayerDecimalPlaces: (self: ModifiersServiceType, player: Player, statPath: string, decimalPlaces: number?) -> (),
+	AddPlayerModifier: (self: ModifiersServiceType, player: Player, config: ModifierConfig) -> string,
+	AddPlayerModifiers: (self: ModifiersServiceType, player: Player, configs: { ModifierConfig }) -> { string },
+	RemovePlayerModifier: (self: ModifiersServiceType, player: Player, statPath: string, modifierId: string) -> boolean,
+	RemovePlayerModifiersBySource: (self: ModifiersServiceType, player: Player, statPath: string, source: string) -> number,
+	RemovePlayerModifiersByTag: (self: ModifiersServiceType, player: Player, statPath: string, tag: string) -> number,
+	RemoveAllPlayerModifiersBySource: (self: ModifiersServiceType, player: Player, source: string) -> number,
+	RemoveAllPlayerModifiersByTag: (self: ModifiersServiceType, player: Player, tag: string) -> number,
+	GetPlayerStat: (self: ModifiersServiceType, player: Player, statPath: string) -> number,
+	GetPlayerModifiers: (self: ModifiersServiceType, player: Player, statPath: string) -> { Modifier },
+	GetPlayerModifiersBySource: (self: ModifiersServiceType, player: Player, statPath: string, source: string) -> { Modifier },
+	GetPlayerModifiersByTag: (self: ModifiersServiceType, player: Player, statPath: string, tag: string) -> { Modifier },
+	GetPlayerStats: (self: ModifiersServiceType, player: Player) -> { string },
+	HasPlayerStat: (self: ModifiersServiceType, player: Player, statPath: string) -> boolean,
+	OnPlayerStatChanged: (self: ModifiersServiceType, player: Player, statPath: string, callback: (newValue: number) -> ()) -> any,
+	GetPlayerDebugInfo: (self: ModifiersServiceType, player: Player) -> { [string]: any },
+
+	SetEntityBase: (self: ModifiersServiceType, entityId: string, statPath: string, baseValue: number) -> (),
+	SetEntityClamps: (self: ModifiersServiceType, entityId: string, statPath: string, minValue: number?, maxValue: number?) -> (),
+	SetEntityDecimalPlaces: (self: ModifiersServiceType, entityId: string, statPath: string, decimalPlaces: number?) -> (),
+	AddEntityModifier: (self: ModifiersServiceType, entityId: string, config: ModifierConfig) -> string,
+	AddEntityModifiers: (self: ModifiersServiceType, entityId: string, configs: { ModifierConfig }) -> { string },
+	RemoveEntityModifier: (self: ModifiersServiceType, entityId: string, statPath: string, modifierId: string) -> boolean,
+	RemoveEntityModifiersBySource: (self: ModifiersServiceType, entityId: string, statPath: string, source: string) -> number,
+	RemoveEntityModifiersByTag: (self: ModifiersServiceType, entityId: string, statPath: string, tag: string) -> number,
+	RemoveAllEntityModifiersBySource: (self: ModifiersServiceType, entityId: string, source: string) -> number,
+	RemoveAllEntityModifiersByTag: (self: ModifiersServiceType, entityId: string, tag: string) -> number,
+	GetEntityStat: (self: ModifiersServiceType, entityId: string, statPath: string) -> number,
+	GetEntityModifiers: (self: ModifiersServiceType, entityId: string, statPath: string) -> { Modifier },
+	GetEntityModifiersBySource: (self: ModifiersServiceType, entityId: string, statPath: string, source: string) -> { Modifier },
+	GetEntityModifiersByTag: (self: ModifiersServiceType, entityId: string, statPath: string, tag: string) -> { Modifier },
+	GetEntityStats: (self: ModifiersServiceType, entityId: string) -> { string },
+	HasEntityStat: (self: ModifiersServiceType, entityId: string, statPath: string) -> boolean,
+	OnEntityStatChanged: (self: ModifiersServiceType, entityId: string, statPath: string, callback: (newValue: number) -> ()) -> any,
+	CleanupEntity: (self: ModifiersServiceType, entityId: string) -> (),
+	GetAllEntities: (self: ModifiersServiceType) -> { string },
+	GetEntityDebugInfo: (self: ModifiersServiceType, entityId: string) -> { [string]: any },
+
+	Register: (self: ModifiersServiceType, player: Player, statPath: string) -> (),
+	Add: (self: ModifiersServiceType, player: Player, statPath: string, value: number, operator: string, source: string, duration: number?) -> string,
+	Remove: (self: ModifiersServiceType, player: Player, source: string) -> number,
+	RemoveFrom: (self: ModifiersServiceType, player: Player, statPath: string, source: string) -> number,
+	Get: (self: ModifiersServiceType, player: Player, statPath: string) -> number,
+
+	RegisterEntity: (self: ModifiersServiceType, entityId: string, statPath: string) -> (),
+	AddEntity: (self: ModifiersServiceType, entityId: string, statPath: string, value: number, operator: string, source: string, duration: number?) -> string,
+	RemoveEntity: (self: ModifiersServiceType, entityId: string, source: string) -> number,
+	RemoveFromEntity: (self: ModifiersServiceType, entityId: string, statPath: string, source: string) -> number,
+	GetEntity: (self: ModifiersServiceType, entityId: string, statPath: string) -> number,
+}
+
 local ModifiersService = e2en.CreateService({
 	Name = "ModifiersService",
 	Client = {

@@ -1,5 +1,6 @@
 local root = script.Parent.Parent.Parent
 local Types = require(root.Types)
+local _ClientTypes = require(script.Parent.Shared.ClientTypes)
 
 local e2en: Types.e2enClient = require(root) :: any
 

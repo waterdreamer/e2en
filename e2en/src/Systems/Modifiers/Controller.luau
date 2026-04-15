@@ -1,6 +1,7 @@
 local root = script.Parent.Parent.Parent
 local Types = require(root.Types)
 local SharedTypes = require(script.Parent.Shared.Types)
+local ClientTypes = require(script.Parent.Shared.ClientTypes)
 
 local ModifierManager = root.Libraries.ModifierManager
 local Calculator = require(ModifierManager.Calculator)
@@ -26,7 +27,7 @@ local ModifiersController = e2en.CreateController({
 	Name = "ModifiersController",
 })
 
-local modifiersService: { [string]: any }
+local modifiersService: ClientTypes.ModifiersServiceProxy
 local stats: { [string]: StatData } = {}
 local initialSyncComplete = false
 
@@ -176,7 +177,7 @@ function ModifiersController:WaitForInitialSync()
 end
 
 function ModifiersController:Init()
-	modifiersService = e2en.GetService("ModifiersService")
+	modifiersService = e2en.GetService("ModifiersService") :: ClientTypes.ModifiersServiceProxy
 
 	modifiersService.StatSynced:Connect(function(statPath: string, syncData: StatSyncData)
 		handleStatSync(statPath, syncData)
